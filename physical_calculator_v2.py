@@ -46,15 +46,25 @@ oxidizer = [[1512.7 , -339.58 , 54.39 , 85.87]]                 # Fluoride
 print("Приветствую!")
 print("Программу разработал: Ckompadre\n")
 
-#   Select fuel
+    #   Select fuel
 print("Выберите вид топлива...")
 print("1. Водород")
 user_input_fuel = int(input("Ответ: "))
+if user_input_fuel == 1:
+    p = fuel[0][0]
+    Jct = fuel[0][1]
+    Tpl = fuel[0][2]
+    Tkip = fuel[0][3]
 
-#   Select oxidizer
+    #   Select oxidizer
 print("\nВыберите вид окислителя...")
 print("1. Фтор")
 user_input_oxidizerr = int(input("Ответ: "))
+if user_input_oxidizerr == 1:
+    p = oxidizer[0][0]
+    Jct = oxidizer[0][1]
+    Tpl = oxidizer[0][2]
+    Tkip = oxidizer[0][3]
 
 #   User data Input
 P0 = float(input("Тяга Р0 = "))
@@ -65,7 +75,7 @@ print("\nГазовая постоянная")
 Rk = answer[1][1] = 8314 / fuel[0][0]                           #fuel
 Rc = answer[2][1] = 8314 / oxidizer[0][0]                       #oxidizer
 print("Газовая постоянная топлива = ", Rk)
-print("газовая постоянная окислителя = ", Rc)
+print("Газовая постоянная окислителя = ", Rc)
 
 print("\nОпределяем удельный объём")
 Tk = float(input("В"))
@@ -73,7 +83,7 @@ Tc = float(input("В"))
 uk = answer[3][1] = (Rk * Tk) / Pk                              #fuel
 uc = answer[4][1] = (Rc * Tc) / Pc                              #oxidizer
 print("Удельный объём топлива = ", uk)
-print("Удельный объём топлива = ", uс)
+print("Удельный объём окислителя = ", uc)
 
 print("\nПоказатель процесса")
 
