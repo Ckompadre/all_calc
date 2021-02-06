@@ -33,18 +33,18 @@ answer = [
 ['Коэффициент, учитывающий влияние земного противодавления = ' , ''],   #24
 ['Коэффициент потерь в закритической части канала на земле = ' , ''],   #25
     #   fourth part
-['Удельный импульс в пустоте' , ''],									#26
-['Удельный импульс на земле' , ''],										#27
-['Расход топлива' , ''],												#28
-['Расход горючего' , ''],												#29
-['Расход окислителя' , ''],												#30
-['Площадь критического сечения' , ''],									#31
-['Площадь среза канала' , ''],											#32
-['Диаметр критического сечения' , ''],									#33
-['Диаметр среза канала' , ''],											#34
-['Тяга в пустоте' , ''],												#35
-['Расходный комплекс' , ''],											#36
-['Коэффициент тяги' , ''],												#37
+['Удельный импульс в пустоте = ' , ''],									#26
+['Удельный импульс на земле = ' , ''],									#27
+['Расход топлива = ' , ''],												#28
+['Расход горючего = ' , ''],											#29
+['Расход окислителя = ' , ''],											#30
+['Площадь критического сечения = ' , ''],								#31
+['Площадь среза канала = ' , ''],										#32
+['Диаметр критического сечения = ', ''],								#33
+['Диаметр среза канала = ', ''],										#34
+['Тяга в пустоте = ', ''],												#35
+['Расходный комплекс = ', ''],											#36
+['Коэффициент тяги = ', ''],											#37
 	#	fiveth part
 [],
 [],
@@ -239,50 +239,15 @@ r_k00T = answer[37][1] = r_P00 / (Pk * r_Fkp)
 print("\nРасходный комплекс = "r_B)
 print("\nКоэффициент тяги", r_k00T)
 
+#	FIVETH PART
+
+print("\nПостроение профиля камеры сгорания")
+
 
 #   Final action
 print("\n\nОТВЕТЫ")
 
-print("\nТеоритические параметры двигателя")
-print(answer[1][0],  answer[1][1])
-print(answer[2][0],  answer[2][1])
-print(answer[3][0],  answer[3][1])
-print(answer[4][0],  answer[4][1])
-print(answer[5][0],  answer[5][1])
-print(answer[6][0],  answer[6][1])
-print(answer[7][0],  answer[7][1])
-print(answer[8][0],  answer[8][1])
-print(answer[9][0],  answer[9][1])
-print(answer[10][0], answer[10][1])
-print(answer[11][0], answer[11][1])
-print(answer[12][0], answer[12][1])
-print(answer[13][0], answer[13][1])
-print(answer[14][0], answer[14][1])
-print(answer[15][0], answer[15][1])
-print(answer[16][0], answer[16][1])
-print(answer[17][0], answer[17][1])
-print(answer[18][0], answer[18][1])
-print(answer[19][0], answer[19][1])
-print(answer[20][0], answer[20][1])
-print(answer[21][0], answer[21][1])
-print(answer[22][0], answer[22][1])
-print(answer[23][0], answer[23][1])
-print(answer[24][0], answer[24][1])
-print(answer[25][0], answer[25][1])
-
-print("\nРеальные параметры двигателя")
-print(answer[26][0], answer[26][1])
-print(answer[27][0], answer[27][1])
-print(answer[28][0], answer[28][1])
-print(answer[29][0], answer[29][1])
-print(answer[30][0], answer[30][1])
-print(answer[31][0], answer[31][1])
-print(answer[32][0], answer[32][1])
-print(answer[33][0], answer[33][1])
-print(answer[34][0], answer[34][1])
-print(answer[35][0], answer[35][1])
-print(answer[36][0], answer[36][1])
-print(answer[37][0], answer[37][1])
-print(answer[38][0], answer[38][1])
-print(answer[39][0], answer[39][1])
-print(answer[40][0], answer[40][1]) 
+i = 1
+while i < 37:
+	print(answer[i][0] , answer[i][1])
+	i += 1
