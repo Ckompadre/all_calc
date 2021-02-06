@@ -212,8 +212,9 @@ r_m = answer[28][1] = P0 / r_J0yd
 print("Расход топлива = ", r_m)
 
 print("Расход горючего и окислителя")
-#r_mg = answer[29][1] = (1 / (1 + k)) * r_m
-#r_mo = answer[30][1] = (k / (1 + k)) * r_m
+k = float(input("Введите значение k = "))
+r_mg = answer[29][1] = (1 / (1 + k)) * r_m
+r_mo = answer[30][1] = (k / (1 + k)) * r_m
 print("Расход горючего = ", r_mg)
 print("Расход окислителя = ", r_mo)
 
