@@ -153,7 +153,7 @@ print("Показатель процесса = ", n)
 
 print("\nСтепень расширения в критическом сечении канала")
 PIkp = answer[6][1] = (2 / n + 1)**(n / n - 1)
-Pkp = answer[7][1] = PIkp * Pkp
+Pkp = answer[7][1] = PIkp * Pk
 print("Степень расширения в критическом сечении канала = ", PIkp, " и ", Pkp)
 
 print("\nCкорость потока в критическом сечении канала")
@@ -348,10 +348,10 @@ print("\n\nОТВЕТЫ")
 i = 1
 print("\nПриблизительные параметры:")
 while i < 26:
-	print(answer[i][0] , answer[i][1])
-	i += 1
+    print(answer[i][0] , answer[i][1])
+    i += 1
 i = 26
 print("\nРеальные параметры двигателя:")
 while i < 52:
-	print(answer[i][0] , answer[i][1])
-	i += 1
+    print(answer[i][0] , answer[i][1])
+    i += 1
