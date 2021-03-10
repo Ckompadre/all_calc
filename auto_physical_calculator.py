@@ -249,52 +249,52 @@ def CombustionChamber():
     print("\n\nРАСЧЕТ РЕАЛЬНЫХ ПАРАМЕТРОВ ДВИГАТЕЛЯ\n")
     
     print("Удельный импульс в пустоте")
-    r_J00yd = answer[26][1] = qk * q00c * J00yd
+    r_J00yd = answer[24][1] = qk * q00c * J00yd
     print(f"Удельный импульс в пустоте = {r_J00yd}")
     
     print("\nУдельный импульс на земле")
-    r_J0yd = answer[27][1] = qk * q0c * J0yd
+    r_J0yd = answer[25][1] = qk * q0c * J0yd
     print(f"Удельный импульс на земле = {r_J0yd}")
     
     print("\nРасход топлива")
-    r_m = answer[28][1] = P0 / r_J0yd * 1000
+    r_m = answer[26][1] = P0 / r_J0yd * 1000
     print(f"Расход топлива = {r_m}")
     
     k = float(input("Введите значение k = "))
     print("Расход горючего")
-    r_mg = answer[29][1] = (1 / (1 + k)) * r_m
+    r_mg = answer[27][1] = (1 / (1 + k)) * r_m
     print(f"Расход горючего = {r_mg}")
     print("Расход окислителя")
-    r_mo = answer[30][1] = (k / (1 + k)) * r_m
+    r_mo = answer[28][1] = (k / (1 + k)) * r_m
     print(f"Расход окислителя = {r_mo}")
     
     print("\nПлощадь критического сечения ")
-    r_Fkp = answer[31][1] = Fkp / q00c / 1000
+    r_Fkp = answer[29][1] = Fkp / q00c / 1000
     print(f"Площадь критического сечения = {r_Fkp}")
     
     print("\nПлощадь сопла")
-    r_Fc = answer[32][1] = Fc / q00c
+    r_Fc = answer[30][1] = Fc / q00c
     print(f"Площадь сопла = {r_Fc}")
     
     print("\nДиаметр критического сечения ")
-    r_dkp = answer[33][1] = math.sqrt((4 * r_Fkp) / math.pi)
+    r_dkp = answer[31][1] = math.sqrt((4 * r_Fkp) / math.pi)
     print(f"Диаметр критического сечения = {r_dkp}")
     
     
     print("\nДиаметр сопла")
-    r_dc = answer[34][1] = math.sqrt((4 * r_Fc) / math.pi)
+    r_dc = answer[32][1] = math.sqrt((4 * r_Fc) / math.pi)
     print(f"Диаметр сопла = {r_dc}")
     
     print("\nТяга в пустоте")
-    r_P00 = answer[35][1] = r_J00yd * r_m / 1000
+    r_P00 = answer[33][1] = r_J00yd * r_m / 1000
     print(f"Тяга в пустоте = {r_P00}")
     
     print("\nРасходный комплекс ")
-    r_B = answer[36][1] = qk * B
+    r_B = answer[34][1] = qk * B
     print(f"Расходный комплекс = {r_B}")
     
     print("\nКоэффициент тяги")
-    r_k00T = answer[37][1] = ((r_P00 * 10**3) / ((Pk * 10**6) * (r_Fkp * 10**-3))) / 1000
+    r_k00T = answer[35][1] = ((r_P00 * 10**3) / ((Pk * 10**6) * (r_Fkp * 10**-3))) / 1000
     print(f"Коэффициент тяги = {r_k00T}")
     
     #   FIVETH PART
@@ -303,24 +303,24 @@ def CombustionChamber():
     
     print("Определение приведенной длины камеры сгорания")
     koef1 = float(input("Введите первый коэфициент от 12.5 до 15 = "))
-    r_Lpr = answer[38][1] = koef1 * 10**3 / math.sqrt(10 * Pk * 10**6)
+    r_Lpr = answer[36][1] = koef1 * 10**3 / math.sqrt(10 * Pk * 10**6)
     print(f"Приведённая длина канала = {r_Lpr}")
     
     print("Определение условной длины камеры сгорания")
     koef2 = float(input("Введите второй коэфициент от до 0.95 = "))
-    r_Lk = answer[39][1] = koef2 * math.sqrt((r_dkp / 1000)) * 100
+    r_Lk = answer[37][1] = koef2 * math.sqrt((r_dkp / 1000)) * 100
     print(f"Условная длина камеры сгорания = {r_Lk}")
     
     print("\nОтносительная площадь камеры сгорания")
-    r__Fk = answer[40][1] = r_Lpr / r_Lk
+    r__Fk = answer[38][1] = r_Lpr / r_Lk
     print(f"Относительная площадь камеры сгорания = {r__Fk}")
 
     print("\nДиаметр камеры сгорания ")
-    r_Dkc = r_dkp * math.sqrt(r__Fk)
+    r_Dkc = answer[39][1]r_dkp * math.sqrt(r__Fk)
     print(f"Диаметр камеры сгорания = {r_Dkc}")
 
     print("\nПлощадь камеры сгорания")
-    r_Fk = answer[42][1] = r__Fk * r_Fkp
+    r_Fk = answer[40][1] = r__Fk * r_Fkp
     print(f"Площадь камеры сгорания = {r_Fk}")
 
     print("\nОбъём камеры сгорания до критического сечения")
@@ -328,19 +328,19 @@ def CombustionChamber():
     print(f"Объём камеры сгорания до критического сечения  = {r_Vk}")
     
     print("\nРадиус камеры сгорания(сравнить с диаметром!!!)")
-    r_Rk = answer[43][1] = math.sqrt(r_Fk / math.pi)
+    r_Rk = answer[42][1] = math.sqrt(r_Fk / math.pi)
     print(f"Радиус камеры сгорания(сравнить с диаметром!!!) = {r_Rk}")
 
     print("\nPадиусы сопряжения")
     koefr1 = float(input("ведите коэффициент радиуса 1 от 1.5 до 2.0 = "))
-    r_R1 = answer[46][1] = koefr1 * r_Rk
+    r_R1 = answer[43][1] = koefr1 * r_Rk
     print(f"Pадиус сопряжения 1 = {r_R1}")
     koefr2 = float(input("ведите коэффициент радиуса 2 от 1.0 до 2.0 = "))
-    r_R2 = answer[47][1] = koefr2 * (r_dkp / 2)
+    r_R2 = answer[44][1] = koefr2 * (r_dkp / 2)
     print(f"Pадиус сопряжения 2 = {r_R2}")
     
     print("Длина конфузора")
-    r_lvh = answer[48][1] = r_Rk * (r_dkp / 2) * math.sqrt(((2 * (r_R1 + r_R2)) / (r_Rk - (r_dkp / 2))) - 1)
+    r_lvh = answer[45][1] = r_Rk * (r_dkp / 2) * math.sqrt(((2 * (r_R1 + r_R2)) / (r_Rk - (r_dkp / 2))) - 1)
     print(f"Длина конфузора = {r_lvh}")
 
     #   Final action
@@ -348,34 +348,34 @@ def CombustionChamber():
 
     i = 1
     print("\nПриблизительные параметры:")
-    while i < 26:
+    while i <= 23:
         print(answer[i][0] , answer[i][1])
         i += 1
-    i = 26
+    i = 24
     print("\nРеальные параметры двигателя:")
-    while i <= 48:
+    while i <= 45:
         print(answer[i][0] , answer[i][1])
         i += 1
 
 def MixerHead():
     print("\n\nРАСЧЁТ СМЕСИТЕЛЬНОЙ ГОЛОВКИ\n")
-    
+    i = 0
     dyaf = float(input("Выберите диаметр форсунки ядра: "))
     dprf = float(input("Выберите диаметр форсунки притирочного слоя: "))
     
     print("\nШаг между форсунками H")
     delta1 = float(input("Введите Δ1 от 1мм до 5мм = "))
-    H = answer1[1][2] = dyaf + delta1
+    H = answer1[i+1][1] = dyaf + delta1
     print("Шаг между форсунками H = ", H)
     
     print("\nТолщина пристеночного слоя головки lпр")
     delta2 = float(input("Введите Δ2 от 1мм до 4мм = "))
-    lpr = answer1[2][2] = 0.5 * dyaf + dprf + delta1 + delta2
+    lpr = answer1[i+1][1] = 0.5 * dyaf + dprf + delta1 + delta2
     print("Толщина пристеночного слоя головки lпр = ", lpr)
     
     print("\nРадиус ядра головки Rя")
     Rk = float(input("Введите значение Rk = "))
-    Rya = answer1[3][2] = Rk - lpr
+    Rya = answer1[i+1][1] = Rk - lpr
     print("Радиус ядра головки Rя = ", Rya)
     
     
